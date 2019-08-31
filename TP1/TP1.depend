@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1567216651 source:c:\users\manu_\desktop\tp1\operation.c
+	"Operation.h"
+
+1567217569 source:c:\users\manu_\desktop\tp1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"Menu.h"
+
+1567215328 c:\users\manu_\desktop\tp1\menu.h
+
+1567216651 c:\users\manu_\desktop\tp1\operation.h
+
+1567218809 source:c:\users\manu_\desktop\tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Menu.h"
+	"Operation.h"
+
