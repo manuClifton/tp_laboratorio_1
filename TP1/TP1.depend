@@ -20,3 +20,24 @@
 	"Menu.h"
 	"Operation.h"
 
+1567809787 source:c:\users\alumno\desktop\tp_laboratorio_1\tp1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"Menu.h"
+
+1567809787 c:\users\alumno\desktop\tp_laboratorio_1\tp1\menu.h
+
+1567810739 source:c:\users\alumno\desktop\tp_laboratorio_1\tp1\operation.c
+	"Operation.h"
+
+1567810761 c:\users\alumno\desktop\tp_laboratorio_1\tp1\operation.h
+
+1567810625 source:c:\users\alumno\desktop\tp_laboratorio_1\tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"Menu.h"
+	"Operation.h"
+

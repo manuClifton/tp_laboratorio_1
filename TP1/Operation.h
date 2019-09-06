@@ -36,3 +36,12 @@ float divideOperation(int num1,int num2);
  *
  */
 int multipliOperation(int num1, int num2);
+
+/** \brief Obtiene el factorial del numero ingresado.
+ *
+ * \param  número long.
+ *
+ * \return Devuelve el resultado de la operacion como long.
+ *
+ */
+int factorial(long num1);

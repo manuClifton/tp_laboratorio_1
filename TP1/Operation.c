@@ -25,3 +25,14 @@ int multipliOperation(int num1, int num2){
         res = num1 * num2;
     return res;
 }
+
+int factorial(long num1)
+{
+    long b;
+    long fact=1;
+    for (b = num1; b > 1; b--)
+    {
+        fact = fact * b;
+    }
+    return fact;
+}

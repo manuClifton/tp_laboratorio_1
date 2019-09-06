@@ -46,7 +46,8 @@ int main()
                         flagDivide = 1;
                     }
                     multiplication = multipliOperation(a,b);
-
+                    factorialA = factorial(a);
+                    factorialB = factorial(b);
 
                     flagOperation =1;
                 }else{
@@ -72,6 +73,7 @@ int main()
                     }
 
                     printf("d) El resultado de A*B es: %d\n", multiplication);
+                    printf("e) Los factoriales de A es %li y el factorial de B es %li\n\n", factorialA, factorialB);
 
                 }else{
                     printf("\nEs necesario realizar los calculos primero\n");
