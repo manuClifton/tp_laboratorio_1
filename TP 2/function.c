@@ -343,7 +343,7 @@ void findEmployeeById(eEmployee list[], int len){
 }
 
 
-/** \brief Modificar el sueldo de un empleado
+/** \brief Modificar el Nombre, Apellido Sueldo o Sector de un empleado
  *
  * \param vector de estructura eEmployee
  * \param tamaño del vector
@@ -352,9 +352,13 @@ void findEmployeeById(eEmployee list[], int len){
 void modifyEmployee(eEmployee list[], int len)
 {
     int file;
-    char confirm;
     float nowSalary;
     int is;
+    int option;
+    char name[51];
+    char lastName[51];
+    int sector;
+    int flag = 0;
 
     char aux[100];
     int num;
@@ -367,7 +371,7 @@ void modifyEmployee(eEmployee list[], int len)
     file = atoi(aux);
 
      while( (!num) ){
-        printf("\nError. ingrese Legajo: ");
+        printf("\nError. Ingrese Legajo: ");
         fflush(stdin);
         scanf("\n%s", aux);
         num = validarNumero(aux);
@@ -383,22 +387,62 @@ void modifyEmployee(eEmployee list[], int len)
     }
     else
     {
-        findEmployee(list, len, file);
+        printf("\n1-Modificar Nombre \n");
+        printf("2-Modificar Apellido \n");
+        printf("3-Modificar Sueldo \n");
+        printf("4-Modificar Sector \n");
+        printf("5-Cancelar \n\n");
 
-        printf("\nQuiere cambiar el sueldo? s/n:  ");
+        printf("Ingrese Opcion: ");
         fflush(stdin);
-        confirm = tolower(getche());
+        scanf("\n%s", aux);
 
-        if(confirm == 's')
-        {
-            printf("\n\nIngrese nuevo sueldo: ");
-            scanf("%f", &nowSalary);
-            //valido sueldo
-            list[is].salary = nowSalary;
+        num = validarNumero(aux);
+        option = atoi(aux);
+
+         while( (!num) ){
+            printf("\nError. Ingrese Opcion: ");
+            fflush(stdin);
+            scanf("\n%s", aux);
+            num = validarNumero(aux);
+            option = atoi(aux);
         }
-        else
-        {
-            printf("\n\nNo se ha modificado el sueldo\n\n");
+
+
+        switch(option){
+            case 1:
+                printf("\n\nIngrese nuevo Nombre: ");
+                scanf("%s", name);
+                strcpy(list[is].name, name);
+                flag = 1;
+                break;
+            case 2:
+                printf("\n\nIngrese nuevo Apellido: ");
+                scanf("%s", lastName);
+                strcpy(list[is].lastName, lastName);
+                flag = 1;
+                break;
+            case 3:
+                printf("\n\nIngrese nuevo sueldo: ");
+                scanf("%f", &nowSalary);
+                list[is].salary = nowSalary;
+                flag = 1;
+                break;
+            case 4:
+                printf("\n\nIngrese nuevo Sector: ");
+                scanf("%d", &sector);
+                list[is].sector = sector;
+                flag = 1;
+                break;
+            case 5:
+                printf("\n\nSe cancelo la operacion!!\n\n");
+                break;
+            default:
+                printf("\n\nOpcion Invalida \n\n");
+                break;
+        }
+        if(flag == 1){
+            printf("\n\nMODIFICACION EXITOSA!! \n\n");
         }
     }
 }
@@ -475,7 +519,7 @@ void sortEmployeesDecendent(eEmployee list[], int len)
 void printEmployee(eEmployee list){
 
     if(list.isEmpty == 1){
-         printf("%5d       %7s     %8s     %7.2f         %d\n", list.id, list.lastName, list.name, list.salary, list.sector);
+         printf("%5d       %7s     %8s     %7.2f         %d\n", list.id, list.name, list.lastName, list.salary, list.sector);
     }
 }
 

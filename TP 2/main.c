@@ -15,7 +15,7 @@ int main()
 //-----------------------LLAMADA DE FUNCIONES-----------/
     initEmployees(employee, SIZEEMP);
 
-    //legajo = legajo + generateEmployee(employee, SIZEEMP, 5);
+    legajo = legajo + generateEmployee(employee, SIZEEMP, 5);
 
     do
     {
