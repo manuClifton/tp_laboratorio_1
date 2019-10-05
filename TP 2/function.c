@@ -215,6 +215,10 @@ int highEmployee(eEmployee list[], int len, int legajo)
 {
     int res = 0;
     int index;
+    char nombre[100];
+    char apellido[100];
+    float sueldo;
+    int sector;
 
 
     index = findFree(list, len);
@@ -229,25 +233,38 @@ int highEmployee(eEmployee list[], int len, int legajo)
 
             printf("Ingrese apellido: ");
             fflush(stdin);
-            gets(list[index].lastName);
+            gets(apellido);
+            while(strlen(apellido) > 50 || strlen(apellido) < 3){
+                printf("Errpr. Reingrese apellido: ");
+                fflush(stdin);
+                gets(apellido);
+            }
 
             printf("Ingrese nombre: ");
             fflush(stdin);
-            gets(list[index].name);
+            gets(nombre);
+            while(strlen(nombre) > 50 || strlen(nombre) < 3){
+                printf("Errpr. Reingrese nombre: ");
+                fflush(stdin);
+                gets(nombre);
+            }
 
             printf("Ingrese sueldo: ");
-            scanf("%f", &list[index].salary );
+            scanf("%f", &sueldo );
 
             printf("Ingrese sector del 1 al 5: ");
-            scanf("%d", &list[index].sector);
-              while(list[index].sector<1|| list[index].sector>5)
+            scanf("%d", &sector);
+              while(sector<1 || sector>5)
             {
             printf("Sector incorrecto, reingrese valor entre 1 y 5: ");
-            scanf("%d",&list[index].sector);
+            scanf("%d",&sector);
             }
 
             list[index].isEmpty = 1;
-
+            strcpy(list[index].name, nombre);
+            strcpy(list[index].lastName, apellido);
+            list[index].salary = sueldo;
+            list[index].sector = sector;
             res = 1;
 
             printf("Alta empleado exitosa!!!\n\n");
