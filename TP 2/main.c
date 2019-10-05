@@ -4,21 +4,18 @@
 #define SIZEEMP 1000
 #define SIZESEC 5
 
-
-
-
 int main()
 {
     char seguir = 's';
     char confirmar;
-    int legajo = 1;
+    int legajo = 0;
 
     eEmployee employee[SIZEEMP];
 
 //-----------------------LLAMADA DE FUNCIONES-----------/
     initEmployees(employee, SIZEEMP);
 
-    legajo = legajo + generateEmployee(employee, SIZEEMP, 5);
+    //legajo = legajo + generateEmployee(employee, SIZEEMP, 5);
 
     do
     {
@@ -53,7 +50,8 @@ int main()
             system("pause");
             break;
         case 6:
-            switch(menuInfo()){
+            if(legajo != 0){
+                switch(menuInfo()){
                 case 1:
                         switch(menuAlphabet()){
                             case 1:
@@ -74,7 +72,13 @@ int main()
                      employeeExceedsAverage(employee, SIZEEMP);
                      system("pause");
                       break;
+                }
             }
+            else{
+                printf("\n\nPRIMERO SE DEBEN CARGAR EMPLEADOS!!!\n\n\n");
+                system("pause");
+            }
+
             break;
 
 

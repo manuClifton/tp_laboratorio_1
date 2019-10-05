@@ -225,7 +225,7 @@ int highEmployee(eEmployee list[], int len, int legajo)
     }
     else
     {
-            list[index].id = legajo;
+            list[index].id = legajo + 1;
 
             printf("Ingrese apellido: ");
             fflush(stdin);
@@ -544,7 +544,7 @@ void employeeExceedsAverage(eEmployee list[], int leng)
     for(int i=0; i < leng; i++)
     {
         if(list[i].isEmpty == 1){
-            counterEmployee = counterEmployee + 1;
+        counterEmployee = counterEmployee + 1;
         counterSalary = counterSalary + list[i].salary;
         }
     }
