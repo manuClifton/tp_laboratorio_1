@@ -428,6 +428,9 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
                 if(tam2 == contador){
                     returnAux = 1;
                 }
+                else{
+                    returnAux = 0;
+                }
             }
             else{
                     returnAux = 0;
